@@ -1,7 +1,16 @@
 require File.join(File.dirname(__FILE__), '..', 'game', 'Board.rb')
 
 describe Board do
-  it "can be created with no parameters" do
-    board = Board.new
+  describe "Creation" do
+    it "can be created with no parameters" do
+      board = Board.new
+    end
+  end
+  
+  describe "Accessing" do
+    it "is empty after creation" do
+      board = Board.new
+      board.positions.each { |position| position.should == '' }
+    end
   end
 end
