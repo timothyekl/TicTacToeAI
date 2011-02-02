@@ -19,7 +19,9 @@ class Board
   end
   
   def setMark(position, mark)
-    @marks[position] = mark
+    if mark == 'x' or mark == 'o'
+      @marks[position] = mark
+    end
   end
   
 end
