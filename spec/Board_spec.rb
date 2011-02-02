@@ -34,33 +34,33 @@ describe Board do
     end
   end
   
-  describe "can read and write" do
+  describe "during use" do
     before(:each) do
       @board = Board.new
     end
     
-    it "an x at each position" do
+    it "can write and read an x at each position" do
       @positions.each do |position|
         @board.setMark(position, 'x')
         @board.markAt(position).should == 'x'
       end
     end
     
-    it "an o at each position" do
+    it "can write and read an o at each position" do
       @positions.each do |position|
         @board.setMark(position, 'o')
         @board.markAt(position).should == 'o'
       end
     end
     
-    it "no other marks than x or o" do
+    it "cannot set marks than x or o" do
       @positions.each do |position|
         @board.setMark(position, 'q')
         @board.markAt(position).should == ''
       end
     end
     
-    it "marks only at legal positions" do
+    it "can set marks only at legal positions" do
       @board.setMark(:RandomSymbol, 'x')
       @board.marks.length.should == 9
       @board.marks.each { |position, mark| @positions.include?(position).should == true }
