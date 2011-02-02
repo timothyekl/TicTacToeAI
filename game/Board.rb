@@ -1,6 +1,5 @@
 class Board
   
-  
   def initialize
     @marks = {}
     positions = [:UpperLeft, :UpperMiddle, :UpperRight,
@@ -14,4 +13,5 @@ class Board
   def marks
     return @marks
   end
+  
 end
