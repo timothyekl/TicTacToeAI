@@ -18,4 +18,8 @@ class Board
     return @marks[position]
   end
   
+  def setMark(position, mark)
+    @marks[position] = 'x'
+  end
+  
 end
