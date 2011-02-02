@@ -7,7 +7,7 @@ describe Board do
     end
   end
   
-  describe "Accessing" do
+  describe "Initial state" do
     before(:each) do
       @board = Board.new
     end
