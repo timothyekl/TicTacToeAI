@@ -8,14 +8,16 @@ describe Board do
   end
   
   describe "Accessing" do
+    before(:each) do
+      @board = Board.new
+    end
+    
     it "has nine positions defined" do
-      board = Board.new
-      board.marks.length.should == 9
+      @board.marks.length.should == 9
     end
     
     it "is empty after creation" do
-      board = Board.new
-      board.marks.each { |position, mark| mark.should == '' }
+      @board.marks.each { |position, mark| mark.should == '' }
     end
   end
 end
