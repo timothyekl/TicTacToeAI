@@ -2,6 +2,12 @@ require File.join(File.dirname(__FILE__), '..', 'game', 'Board.rb')
 
 describe Board do
   
+  before(:each) do
+    @positions = [:UpperLeft, :UpperMiddle, :UpperRight,
+      :MiddleLeft, :MiddleMiddle, :MiddleRight,
+      :LowerLeft, :LowerMiddle, :LowerRight ]
+  end
+  
   describe "can be created" do
     it "with no parameters" do
       board = Board.new
@@ -22,10 +28,7 @@ describe Board do
     end
     
     it "can access empty marks individually" do
-      positions = [:UpperLeft, :UpperMiddle, :UpperRight,
-        :MiddleLeft, :MiddleMiddle, :MiddleRight,
-        :LowerLeft, :LowerMiddle, :LowerRight ]
-      positions.each do |position|
+      @positions.each do |position|
         @board.markAt(position).should == ''
       end
     end
@@ -37,30 +40,21 @@ describe Board do
     end
     
     it "an x at each position" do
-      positions = [:UpperLeft, :UpperMiddle, :UpperRight,
-        :MiddleLeft, :MiddleMiddle, :MiddleRight,
-        :LowerLeft, :LowerMiddle, :LowerRight ]
-      positions.each do |position|
+      @positions.each do |position|
         @board.setMark(position, 'x')
         @board.markAt(position).should == 'x'
       end
     end
     
     it "an o at each position" do
-      positions = [:UpperLeft, :UpperMiddle, :UpperRight,
-        :MiddleLeft, :MiddleMiddle, :MiddleRight,
-        :LowerLeft, :LowerMiddle, :LowerRight ]
-      positions.each do |position|
+      @positions.each do |position|
         @board.setMark(position, 'o')
         @board.markAt(position).should == 'o'
       end
     end
     
     it "no other marks than x or o" do
-      positions = [:UpperLeft, :UpperMiddle, :UpperRight,
-        :MiddleLeft, :MiddleMiddle, :MiddleRight,
-        :LowerLeft, :LowerMiddle, :LowerRight ]
-      positions.each do |position|
+      @positions.each do |position|
         @board.setMark(position, 'q')
         @board.markAt(position).should == ''
       end
