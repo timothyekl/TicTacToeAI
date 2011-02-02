@@ -10,7 +10,7 @@ describe Board do
   describe "Accessing" do
     it "is empty after creation" do
       board = Board.new
-      board.positions.each { |position| position.should == '' }
+      board.marks.each { |mark| mark.should == '' }
     end
   end
 end
