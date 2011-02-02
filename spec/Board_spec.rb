@@ -59,6 +59,12 @@ describe Board do
         @board.markAt(position).should == ''
       end
     end
+    
+    it "marks only at legal positions" do
+      @board.setMark(:RandomSymbol, 'x')
+      @board.marks.length.should == 9
+      @board.marks.each { |position, mark| @positions.include?(position).should == true }
+    end
   end
   
 end
