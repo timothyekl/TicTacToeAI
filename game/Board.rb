@@ -2,10 +2,10 @@ class Board
   
   def initialize
     @marks = {}
-    positions = [:UpperLeft, :UpperMiddle, :UpperRight,
+    @positions = [:UpperLeft, :UpperMiddle, :UpperRight,
       :MiddleLeft, :MiddleMiddle, :MiddleRight,
       :LowerLeft, :LowerMiddle, :LowerRight ]
-    positions.each do |position|
+    @positions.each do |position|
       @marks[position] = ''
     end
   end
@@ -19,7 +19,7 @@ class Board
   end
   
   def setMark(position, mark)
-    if mark == 'x' or mark == 'o'
+    if (mark == 'x' or mark == 'o') and @positions.include?(position)
       @marks[position] = mark
     end
   end
