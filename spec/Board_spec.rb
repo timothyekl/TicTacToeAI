@@ -2,13 +2,13 @@ require File.join(File.dirname(__FILE__), '..', 'game', 'Board.rb')
 
 describe Board do
   
-  describe "Creation" do
-    it "can be created with no parameters" do
+  describe "can be created" do
+    it "with no parameters" do
       board = Board.new
     end
   end
   
-  describe "Initial state" do
+  describe "after creation" do
     before(:each) do
       @board = Board.new
     end
@@ -17,7 +17,7 @@ describe Board do
       @board.marks.length.should == 9
     end
     
-    it "is empty after creation" do
+    it "is empty" do
       @board.marks.each { |position, mark| mark.should == '' }
     end
     

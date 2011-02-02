@@ -14,4 +14,8 @@ class Board
     return @marks
   end
   
+  def markAt(position)
+    return @marks[position]
+  end
+  
 end
