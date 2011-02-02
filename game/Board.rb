@@ -19,7 +19,7 @@ class Board
   end
   
   def setMark(position, mark)
-    @marks[position] = 'x'
+    @marks[position] = mark
   end
   
 end
