@@ -6,6 +6,11 @@ class ComputerPlayer < Player
     if !(mark == :X || mark == :O)
       raise ArgumentError, "Mark must be X or O"
     end
+    @mark = mark
+  end
+  
+  def mark
+    return @mark
   end
   
 end
