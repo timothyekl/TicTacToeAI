@@ -13,4 +13,8 @@ class ComputerPlayer < Player
     return @mark
   end
   
+  def getMove(board)
+    return :MiddleMiddle
+  end
+  
 end
