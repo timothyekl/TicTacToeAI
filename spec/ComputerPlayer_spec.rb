@@ -1,4 +1,5 @@
 require File.join(File.dirname(__FILE__), '..', 'game', 'ComputerPlayer.rb')
+require File.join(File.dirname(__FILE__), '..', 'game', 'Board.rb')
 
 describe ComputerPlayer do
   
@@ -16,6 +17,21 @@ describe ComputerPlayer do
       XPlayer.mark.should == :X
       OPlayer.mark.should == :O
     end
+  end
+  
+  describe "with mark X" do
+    
+    before(:each) do
+      @player = ComputerPlayer.new(:X)
+    end
+    
+    describe "for an empty board" do
+      it "should play the center" do
+        board = Board.new
+        @player.getMove(board).should == :MiddleMiddle
+      end
+    end
+    
   end
   
 end
