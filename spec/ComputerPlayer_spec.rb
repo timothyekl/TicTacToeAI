@@ -11,6 +11,11 @@ describe ComputerPlayer do
     it "cannot be created with an invalid mark" do
       expect{ComputerPlayer.new(:Invalid)}.to raise_error(ArgumentError)
     end
+    
+    it "stores its mark" do
+      XPlayer.mark.should == :X
+      OPlayer.mark.should == :O
+    end
   end
   
 end
