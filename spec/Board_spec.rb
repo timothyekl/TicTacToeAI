@@ -65,6 +65,12 @@ describe Board do
       @board.marks.length.should == 9
       @board.marks.each { |position, mark| @positions.include?(position).should == true }
     end
+    
+    it "can set marks only at unmarked positions" do
+      @board.setMark(:UpperLeft, 'x')
+      @board.setMark(:UpperLeft, 'o')
+      @board.markAt(:UpperLeft).should == 'x'
+    end
   end
   
 end
