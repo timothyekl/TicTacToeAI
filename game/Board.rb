@@ -19,7 +19,7 @@ class Board
   end
   
   def canSetMarkAt?(position)
-    return (@positions.include?(position) and @marks[position] == '')
+    return @positions.include?(position) and not @marks.include?(position)
   end
   
   def isLegalMark?(mark)
