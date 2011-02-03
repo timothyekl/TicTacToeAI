@@ -41,15 +41,15 @@ describe Board do
     
     it "can write and read an x at each position" do
       @positions.each do |position|
-        @board.setMark(position, 'x')
-        @board.markAt(position).should == 'x'
+        @board.setMark(position, :X)
+        @board.markAt(position).should == :X
       end
     end
     
     it "can write and read an o at each position" do
       @positions.each do |position|
-        @board.setMark(position, 'o')
-        @board.markAt(position).should == 'o'
+        @board.setMark(position, :O)
+        @board.markAt(position).should == :O
       end
     end
     
@@ -61,15 +61,15 @@ describe Board do
     end
     
     it "can set marks only at legal positions" do
-      @board.setMark(:RandomSymbol, 'x')
+      @board.setMark(:RandomSymbol, :X)
       @board.marks.length.should == 9
       @board.marks.each { |position, mark| @positions.include?(position).should == true }
     end
     
     it "can set marks only at unmarked positions" do
-      @board.setMark(:UpperLeft, 'x')
-      @board.setMark(:UpperLeft, 'o')
-      @board.markAt(:UpperLeft).should == 'x'
+      @board.setMark(:UpperLeft, :X)
+      @board.setMark(:UpperLeft, :O)
+      @board.markAt(:UpperLeft).should == :X
     end
   end
   
