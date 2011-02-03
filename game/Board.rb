@@ -6,7 +6,7 @@ class Board
       :MiddleLeft, :MiddleMiddle, :MiddleRight,
       :LowerLeft, :LowerMiddle, :LowerRight ]
     @positions.each do |position|
-      @marks[position] = ''
+      @marks[position] = :Empty
     end
   end
   
@@ -19,7 +19,7 @@ class Board
   end
   
   def canSetMarkAt?(position)
-    return @positions.include?(position) and not @marks.include?(position)
+    return (@positions.include?(position) and @marks[position] == :Empty)
   end
   
   def isLegalMark?(mark)

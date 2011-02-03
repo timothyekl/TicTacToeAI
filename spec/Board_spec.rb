@@ -24,12 +24,12 @@ describe Board do
     end
     
     it "is empty" do
-      @board.marks.each { |position, mark| mark.should == '' }
+      @board.marks.each { |position, mark| mark.should == :Empty }
     end
     
     it "can access empty marks individually" do
       @positions.each do |position|
-        @board.markAt(position).should == ''
+        @board.markAt(position).should == :Empty
       end
     end
   end
@@ -56,7 +56,7 @@ describe Board do
     it "cannot set marks than x or o" do
       @positions.each do |position|
         @board.setMark(position, 'q')
-        @board.markAt(position).should == ''
+        @board.markAt(position).should == :Empty
       end
     end
     
