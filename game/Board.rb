@@ -19,15 +19,15 @@ class Board
   end
   
   def canSetMarkAt?(position)
-    return (@positions.include?(position) and @marks[position] == :Empty)
+    return @positions.include?(position) && @marks[position] == :Empty
   end
   
   def isLegalMark?(mark)
-    return (mark == :X or mark == :O)
+    return mark == :X || mark == :O
   end
   
   def setMark(position, mark)
-    if self.isLegalMark?(mark) and self.canSetMarkAt?(position)
+    if self.isLegalMark?(mark) && self.canSetMarkAt?(position)
       @marks[position] = mark
     end
   end
