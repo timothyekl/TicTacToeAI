@@ -2,9 +2,15 @@ require File.join(File.dirname(__FILE__), '..', 'game', 'ComputerPlayer.rb')
 
 describe ComputerPlayer do
   
-  it "can be created" do
-    XPlayer = ComputerPlayer.new(:X)
-    OPlayer = ComputerPlayer.new(:O)
+  describe "for a new game" do
+    it "can be created with a valid mark" do
+      XPlayer = ComputerPlayer.new(:X)
+      OPlayer = ComputerPlayer.new(:O)
+    end
+    
+    it "cannot be created with an invalid mark" do
+      expect{ComputerPlayer.new(:Invalid)}.to raise_error(ArgumentError)
+    end
   end
   
 end
